@@ -68,6 +68,14 @@ body {
   .my-name {
     font-size: 36px;
   }
+  .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .last-updated {
+    font-size: 12px;
+  }
   sub {
     vertical-align: sub;
     font-size: smaller;
