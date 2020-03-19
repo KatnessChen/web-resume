@@ -29,7 +29,7 @@ body {
   line-height: 1;
 }
 
-ol, ul {
+ol {
   list-style: none;
 }
 
@@ -47,171 +47,253 @@ table {
   border-spacing: 0;
 }
 
+a {
+  color: #f1f1f1;
+}
+
 * {
-  font-family: 'Roboto', sans-serif;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
 body {
-  height: 100vh;
-  background-color: #121212;
-  line-height: 1.2;
-  padding-top: 30px;
+  background-color: gray;
+  font-family: 'Ubuntu Mono', monospace;
 }
 
-@media (max-width: 415px) {
-  body {
-    padding-top: 0;
-  }
+header {
+  position: relative;
+  min-width: 777px;
+  max-width: 960px;
+  margin: 100px auto 0 auto;
+  background-color: #232323;
+  color: white;
+  padding: 60px 6px 20px 6px;
 }
 
-body main {
-  min-width: 320px;
-  max-width: 414px;
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(50% - 50px);
+  height: 35px;
+  background-color: gray;
+}
+
+header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: calc(50% - 25px);
+  height: 35.5px;
+  background-color: gray;
+}
+
+header .deco {
+  background-color: #000;
+  position: absolute;
+  top: 0;
+  left: calc(50% - 50px);
+  width: 156px;
+  height: 50px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transform-origin: left top;
+          transform-origin: left top;
+  z-index: 1;
+}
+
+header h1 {
+  font-size: 42px;
+  padding-left: 30px;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+}
+
+header h2 {
+  font-size: 24px;
+  padding-left: 30px;
+  font-family: 'Roboto', sans-serif;
+}
+
+header span {
+  position: absolute;
+  right: 36px;
+  bottom: 55px;
+}
+
+main {
+  min-width: 777px;
+  max-width: 960px;
+  margin: 40px auto 0 auto;
+  color: #fefefe;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 36px;
+}
+
+main aside {
+  display: inline-block;
+  vertical-align: top;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 25%;
+          flex: 0 0 25%;
+  margin-left: 40px;
+  background-color: #232323;
   padding: 8px;
-  background-color: white;
-  margin: auto;
 }
 
-body .my-name {
-  font-size: 36px;
+main aside ul {
+  padding-left: 16px;
 }
 
-body .flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+main aside > ul > li {
+  margin-bottom: 20px;
 }
 
-body .last-updated {
-  font-size: 12px;
-}
-
-body sub {
-  vertical-align: sub;
-  font-size: smaller;
-  margin-left: 2px;
-}
-
-body hr {
-  border: none;
-  background-color: black;
-  width: 100%;
-  margin: 2px 0;
-}
-
-body hr.normal {
-  height: 1px;
-}
-
-body hr.bold {
-  height: 8px;
-}
-
-body hr.bolder {
-  height: 15px;
-}
-
-body a {
-  color: black;
-}
-
-body .skill-set {
-  line-height: 1.5;
-}
-
-body .skill-set .skill-label {
-  font-weight: 500;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border-bottom: 1px solid #000;
-}
-
-body .skill-set .skill-label .skill-label-name {
-  font-style: italic;
-  font-weight: bold;
-  font-size: 16px;
-}
-
-body .skill-set .skill-label .skill-label-percentage {
-  font-size: 16px;
-  font-weight: bold;
-}
-
-body .skill-set .skill-set {
-  padding-left: 15px;
-}
-
-body .skill-set .skill-set .skill-label-name {
-  font-style: normal;
-  font-size: 12px;
-  font-weight: normal;
-}
-
-body .skill-set .skill-set .skill-label-percentage {
-  font-size: 12px;
-  font-weight: normal;
-}
-
-[class^="section-"] {
-  font-size: 12px;
-}
-
-[class^="section-"] .section-title {
-  font-size: 14px;
-  font-weight: bold;
-  margin-top: 8px;
-}
-
-.section-info .section-content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.section-experience .section-experience-stage {
-  font-size: 14px;
-  line-height: 1.4;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.section-experience .section-experience-stage sub {
+main section {
+  display: inline-block;
+  vertical-align: top;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  margin-top: 5px;
-  font-size: 10px;
+  color: #e1e1e1;
 }
 
-.section-experience ul {
+main section p {
+  margin-bottom: 24px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+main section h3 {
+  font-size: 22px;
+  margin-bottom: 8px;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+}
+
+main section h4 {
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+}
+
+main section ol, main section ul {
+  margin: 20px auto 24px auto;
+  padding-left: 16px;
+}
+
+main section ol li, main section ul li {
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+main section ol li + li, main section ul li + li {
+  margin-top: 4px;
+}
+
+main section ol li a, main section ul li a {
   font-size: 12px;
-  padding-left: 15px;
+  color: #fafafa;
+  background-color: #565656;
 }
 
-.section-works ul li {
-  display: inline-block;
+main section ol li span, main section ul li span {
+  font-size: 12px;
+  padding-left: 6px;
 }
 
-.section-works ul li:not(:first-child) {
+main section ol li strong, main section ul li strong {
+  background-color: #565656;
+}
+
+main section ol li h4 strong, main section ul li h4 strong {
+  background-color: #343434;
+  padding: 0 6px;
   margin-right: 6px;
+  line-height: 12px;
+  font-weight: bold;
+}
+
+main section .side-project-list {
+  padding-left: 32px;
+}
+
+main section time {
+  font-size: 12px;
+  margin-left: 12px;
+}
+
+footer {
+  min-width: 777px;
+  max-width: 960px;
+  margin: 40px auto 0 auto;
+  background-color: #232323;
+  color: #f1f1f1;
+  padding: 6px 36px;
+  margin-bottom: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 14px;
+}
+
+svg {
+  height: 200px;
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+svg g {
+  -webkit-transition: .3s all ease;
+  transition: .3s all ease;
+}
+
+svg g:hover {
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+  cursor: pointer;
+}
+
+svg g text {
+  fill: white;
+  font-family: "Roboto", sans-serif;
+  font-size: .65rem;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #565656;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #fdfdfd;
+}
+
+::-webkit-scrollbar-corner {
+  background: rgba(0, 0, 0, 0.5);
 }
 /*# sourceMappingURL=style.css.map */
